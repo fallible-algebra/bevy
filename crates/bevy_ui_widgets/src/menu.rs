@@ -39,7 +39,8 @@ use bevy_ecs::{
     observer::On,
     query::{Has, With},
     schedule::IntoScheduleConfigs,
-    system::{Commands, Query, Res, ResMut}, template::FromTemplate,
+    system::{Commands, Query, Res, ResMut},
+    template::FromTemplate,
 };
 use bevy_input::{
     keyboard::{KeyCode, KeyboardInput},

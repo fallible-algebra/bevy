@@ -9,7 +9,8 @@ use bevy_ecs::{
     query::{With, Without},
     reflect::ReflectComponent,
     schedule::IntoScheduleConfigs,
-    system::{Query, Res}, template::FromTemplate,
+    system::{Query, Res},
+    template::FromTemplate,
 };
 use bevy_math::{Affine2, Vec2};
 use bevy_picking::events::{Cancel, Drag, DragEnd, DragStart, Pointer, Press};

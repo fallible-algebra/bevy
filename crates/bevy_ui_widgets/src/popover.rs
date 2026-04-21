@@ -7,7 +7,8 @@ use bevy_ecs::{
     hierarchy::{ChildOf, Children},
     query::Without,
     schedule::IntoScheduleConfigs,
-    system::{ParamSet, Query}, template::FromTemplate,
+    system::{ParamSet, Query},
+    template::FromTemplate,
 };
 use bevy_math::{Affine2, Rect, Vec2};
 use bevy_ui::{

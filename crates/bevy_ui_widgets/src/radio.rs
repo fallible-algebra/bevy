@@ -8,7 +8,8 @@ use bevy_ecs::{
     observer::On,
     query::{Has, With, Without},
     reflect::ReflectComponent,
-    system::{Commands, Query}, template::FromTemplate,
+    system::{Commands, Query},
+    template::FromTemplate,
 };
 use bevy_input::keyboard::{KeyCode, KeyboardInput};
 use bevy_input::ButtonState;
