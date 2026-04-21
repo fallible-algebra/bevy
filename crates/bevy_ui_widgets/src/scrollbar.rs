@@ -9,7 +9,7 @@ use bevy_ecs::{
     query::{With, Without},
     reflect::ReflectComponent,
     schedule::IntoScheduleConfigs,
-    system::{Query, Res},
+    system::{Query, Res}, template::FromTemplate,
 };
 use bevy_math::{Affine2, Vec2};
 use bevy_picking::events::{Cancel, Drag, DragEnd, DragStart, Pointer, Press};
@@ -53,7 +53,7 @@ pub enum ControlOrientation {
 /// The application is free to position the scrollbars relative to the scrolling container however
 /// it wants: it can overlay them on top of the scrolling content, or use a grid layout to displace
 /// the content to make room for the scrollbars.
-#[derive(Component, Debug, Reflect, Clone, PartialEq)]
+#[derive(Component, Debug, Reflect, Clone, PartialEq, FromTemplate)]
 #[reflect(Component)]
 pub struct Scrollbar {
     /// Entity being scrolled.
@@ -73,7 +73,7 @@ pub struct Scrollbar {
 /// A `ScrollbarThumb` UI node does not have a `Node` component. It only has `Border` and `BorderRadius` styling properties.
 /// Its layout is handled after `ui_layout_system` in `update_scroll_thumb` so that its size and position can be set relative to the scrolling area's
 /// size and scroll position.
-#[derive(Component, Debug, Default)]
+#[derive(Component, Debug, Default, FromTemplate)]
 #[require(
     CoreScrollbarDragState,
     ComputedNode,
