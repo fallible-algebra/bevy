@@ -8,6 +8,7 @@ use bevy_ecs::hierarchy::Children;
 use bevy_ecs::lifecycle::Insert;
 use bevy_ecs::query::Has;
 use bevy_ecs::system::Res;
+use bevy_ecs::template::FromTemplate;
 use bevy_ecs::world::DeferredWorld;
 use bevy_ecs::{
     component::Component,
@@ -92,7 +93,7 @@ pub enum TrackClick {
 ///
 /// In cases where overhang is desired for artistic reasons, the thumb may have additional
 /// decorative child elements, absolutely positioned, which don't affect the size measurement.
-#[derive(Component, Debug, Default, Clone)]
+#[derive(Component, FromTemplate, Debug, Default, Clone)]
 #[require(
     AccessibilityNode(accesskit::Node::new(Role::Slider)),
     CoreSliderDragState,
@@ -108,16 +109,16 @@ pub struct Slider {
 }
 
 /// Marker component that identifies which descendant element is the slider thumb.
-#[derive(Component, Debug, Default, Clone)]
+#[derive(Component, FromTemplate, Debug, Default, Clone)]
 pub struct SliderThumb;
 
 /// A component which stores the current value of the slider.
-#[derive(Component, Debug, Default, PartialEq, Clone, Copy)]
+#[derive(Component, FromTemplate, Debug, Default, PartialEq, Clone, Copy)]
 #[component(immutable)]
 pub struct SliderValue(pub f32);
 
 /// A component which represents the allowed range of the slider value. Defaults to 0.0..=1.0.
-#[derive(Component, Debug, PartialEq, Clone, Copy)]
+#[derive(Component, FromTemplate, Debug, PartialEq, Clone, Copy)]
 #[component(immutable)]
 pub struct SliderRange {
     /// The beginning of the allowed range for the slider value.
@@ -202,7 +203,7 @@ impl Default for SliderRange {
 
 /// Defines the amount by which to increment or decrement the slider value when using keyboard
 /// shortcuts. Defaults to 1.0.
-#[derive(Component, Debug, PartialEq, Clone)]
+#[derive(Component, FromTemplate, Debug, PartialEq, Clone)]
 #[component(immutable)]
 #[derive(Reflect)]
 #[reflect(Component)]
@@ -223,7 +224,7 @@ impl Default for SliderStep {
 /// The value in this component represents the number of decimal places of desired precision, so a
 /// value of 2 would round to the nearest 1/100th. A value of -3 would round to the nearest
 /// thousand.
-#[derive(Component, Debug, Default, Clone, Copy, Reflect)]
+#[derive(Component, FromTemplate, Debug, Default, Clone, Copy, Reflect)]
 #[reflect(Component, Default)]
 pub struct SliderPrecision(pub i32);
 

@@ -7,7 +7,7 @@ use bevy_ecs::{
     hierarchy::{ChildOf, Children},
     query::Without,
     schedule::IntoScheduleConfigs,
-    system::{ParamSet, Query},
+    system::{ParamSet, Query}, template::FromTemplate,
 };
 use bevy_math::{Affine2, Rect, Vec2};
 use bevy_ui::{
@@ -79,7 +79,7 @@ pub struct PopoverPlacement {
 
 /// Component which is inserted into a popover element to make it dynamically position relative to
 /// an parent element.
-#[derive(Component, PartialEq, Default)]
+#[derive(Component, FromTemplate, PartialEq, Default)]
 pub struct Popover {
     /// List of potential positions for the popover element relative to the parent.
     pub positions: Vec<PopoverPlacement>,
