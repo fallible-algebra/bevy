@@ -8,7 +8,6 @@ use bevy_ecs::{
     query::Without,
     schedule::IntoScheduleConfigs,
     system::{ParamSet, Query},
-    template::FromTemplate,
 };
 use bevy_math::{Affine2, Rect, Vec2};
 use bevy_ui::{

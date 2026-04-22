@@ -224,7 +224,7 @@ impl Default for SliderStep {
 /// The value in this component represents the number of decimal places of desired precision, so a
 /// value of 2 would round to the nearest 1/100th. A value of -3 would round to the nearest
 /// thousand.
-#[derive(Component, Debug, Default, Clone, Copy, Reflect)]
+#[derive(Component, FromTemplate, Debug, Default, Clone, Copy, Reflect)]
 #[reflect(Component, Default)]
 pub struct SliderPrecision(pub i32);
 
