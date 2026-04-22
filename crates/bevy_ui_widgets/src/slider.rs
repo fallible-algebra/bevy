@@ -113,12 +113,12 @@ pub struct Slider {
 pub struct SliderThumb;
 
 /// A component which stores the current value of the slider.
-#[derive(Component, FromTemplate, Debug, Default, PartialEq, Clone, Copy)]
+#[derive(Component, Debug, Default, PartialEq, Clone, Copy)]
 #[component(immutable)]
 pub struct SliderValue(pub f32);
 
 /// A component which represents the allowed range of the slider value. Defaults to 0.0..=1.0.
-#[derive(Component, FromTemplate, Debug, PartialEq, Clone, Copy)]
+#[derive(Component, Debug, PartialEq, Clone, Copy)]
 #[component(immutable)]
 pub struct SliderRange {
     /// The beginning of the allowed range for the slider value.
@@ -203,7 +203,7 @@ impl Default for SliderRange {
 
 /// Defines the amount by which to increment or decrement the slider value when using keyboard
 /// shortcuts. Defaults to 1.0.
-#[derive(Component, FromTemplate, Debug, PartialEq, Clone)]
+#[derive(Component, Debug, PartialEq, Clone)]
 #[component(immutable)]
 #[derive(Reflect)]
 #[reflect(Component)]
@@ -224,7 +224,7 @@ impl Default for SliderStep {
 /// The value in this component represents the number of decimal places of desired precision, so a
 /// value of 2 would round to the nearest 1/100th. A value of -3 would round to the nearest
 /// thousand.
-#[derive(Component, FromTemplate, Debug, Default, Clone, Copy, Reflect)]
+#[derive(Component, Debug, Default, Clone, Copy, Reflect)]
 #[reflect(Component, Default)]
 pub struct SliderPrecision(pub i32);
 
